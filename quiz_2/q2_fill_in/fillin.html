@@ -1,12 +1,12 @@
-第一個按鈕示範更改超連結的文字，接下來請你填入後面三個function裡的jquery選擇器的內容讓
-1. setimg()修改Second Paragraph裡面的圖片的連結
+<!--第一個按鈕示範更改超連結的文字，接下來請你填入後面三個function裡的jquery選擇器的內容讓
+1. setimg()修改Second Paragraph裡面的圖片的連結及css
 2. setdiv()修改header3
 3. setp()修改Fourth Paragraph
 
 註：
 不能修改html標籤，只能修改$(...)裡面的內容。
-也不能用選擇器選擇大範圍的標籤再用迴圈一個一個找，必須用選擇器找到唯一適合的標籤。
-選擇器資訊請參考jQuery的參考手冊。
+也不能用選擇器選擇一堆的標籤再用迴圈一個一個找，必須用選擇器找到唯一適合的標籤。
+選擇器資訊請參考jQuery的參考手冊。-->
 
 <html>
 	<head>
@@ -18,7 +18,8 @@
 				$("div > a").html("<h1>hyperlink</h1>");
 			}
             function setimg() {
-				$("div > p > a > img").attr("src","../pics/fun.jpg");
+				$("div > p > a > img").attr("src","../pics/fun1.jpg");
+                $("div > p > a > img").attr("style","width: 20%; height: 20%");
 			}
             function setdiv() {
                 $("div > div:first").html("<h1>remover header3 done!</h1>");
