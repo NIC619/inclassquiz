@@ -1,0 +1,29 @@
+請從以下程式找出錯誤，以讓result可以被算出。
+
+<html>
+	<head>
+		<title>Var</title>
+        <script src="../jquery.min.js"></script>
+		<script type="text/javascript">
+			var sum = 95;
+            function setX(_x) {
+                var x = _x * ( 40 / ( sum + 40)  );
+                $("#x").html(x);
+			}
+            function setY(_y) {
+                var y = _y * ( 55 / ( sum + 55 ) );
+                $("#y").html(y);
+            }
+            function compute() {
+                $("#result").html( ( 15 * ( x + y ) + 110 * ( x - y )  )/ ( sum ) );
+            }
+            
+		</script>
+	</head>
+	<body>
+        x = <span id="x"></span>, y = <span id="y"></span> and result = <span id="result"></span><hr>
+        <button onclick="setX(45)">setX(45)</button>
+        <button onclick="setY(75)">setY(75)</button>
+        <button onclick="compute()">compute result</button>
+	</body>
+</html>

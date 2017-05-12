@@ -1,0 +1,61 @@
+第一個按鈕示範更改超連結的文字，接下來請你填入後面三個function裡的jquery選擇器的內容讓
+1. setimg()修改Second Paragraph裡面的圖片的連結
+2. setdiv()修改header3
+3. setp()修改Fourth Paragraph
+
+註：
+不能修改html標籤，只能修改$(...)裡面的內容。
+也不能用選擇器選擇大範圍的標籤再用迴圈一個一個找，必須用選擇器找到唯一適合的標籤。
+選擇器資訊請參考jQuery的參考手冊。
+
+<html>
+	<head>
+		<title>Selector</title>
+        <script src="../jquery.min.js">
+        </script>
+		<script type="text/javascript">
+			function seta() {
+				$("div > a").html("<h1>hyperlink</h1>");
+			}
+            function setimg() {
+				$("div > p > a > img").attr("src","../pics/fun.jpg");
+			}
+            function setdiv() {
+                $("div > div:first").html("<h1>remover header3 done!</h1>");
+			}
+            function setp() {
+                $("div + p").html("<h1>no more Fourth Paragraph!</h1>");
+            }
+		</script>
+	</head>
+	<body>
+		<div>
+            <a href="#">hyperlink</a>
+            <p>First Paragraph
+                <h4>header1</h4>
+                <img src="/not_exist">
+            </p>
+        </div>
+        <hr>
+        <div>
+            <p>Second Paragraph<br>
+                <a href="#"><img src="not_exist"></a>
+                <h4>header2</h4>
+            </p>
+        </div>
+        <hr>
+        <div>
+            <p>Third Paragraph</p>
+            <div>header3</div>
+            <p>Fourth Paragraph
+            </p>
+            <img src="not_exist">
+            <div>header4</div>
+        </div>
+        <hr>
+        <button onclick="seta()">enlarge hyperlink</button>
+        <button onclick="setimg()">set&lt;img&gt;</button>
+        <button onclick="setdiv()">set&lt;div4&gt;</button>
+        <button onclick="setp()">set&lt;p&gt;</button>
+	</body>
+</html>

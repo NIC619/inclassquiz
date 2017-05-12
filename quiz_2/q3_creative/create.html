@@ -1,0 +1,49 @@
+請在evo()裡操控圖片的透明度(opacity)和更改圖片src。當你按下按鈕時，畫面會顯示演化的動畫。
+div和按鈕的大小位置請勿更動，其他顏色特效等等的可以自由調整。
+評分重點最基本是圖片的動畫要展示出演化的過程。
+
+<html>
+	<head>
+		<title>Var</title>
+        <script src="../jquery.min.js"></script>
+		<script type="text/javascript">
+            function evo() {
+                var div1 = $("#div1");
+                var div2 = $("#div2");
+                var img1 = $("#img1");
+                var img2 = $("#img2");
+                //animate第一個參數設定物件的屬性，這些我們改變opacity
+                //第二個參數是動畫持續的時間，單位為毫秒
+                //第三個動畫完成之後執行的function
+                // div2.animate({ opacity: 1 }, 3000, function(){
+                // });
+
+                //替換物件的屬性，這裡我們改變src屬性來改變圖片的來源
+                // img1.attr("src", "../spongebob1.jpg");
+                div2.animate({ opacity: 1 }, 3000, function(){
+                    setTimeout(function() {
+                        div2.animate({ opacity: 0}, 4000, function(){
+                            img2.attr("src", "../pics/spongebob1.jpg");
+                        });
+                        div1.animate({ opacity: 1}, 4000);
+                    }, 1000);
+                });
+                div1.animate({ opacity: 0 }, 3000, function(){
+                    img1.attr("src", "../pics/alien2.jpg");
+                });
+            }
+            
+		</script>
+	</head>
+	<body style="background-color: black;">
+        <div id="div1" style="position: fixed; top: 10%; left: 30%; height: 80%; width: 40%">
+            <img id="img1" src="../pics/man2.jpg" alt="No img" style="position: relative; height: 100%; width: 100%;">
+        </div>
+        <div id="div2" style="opacity: 0; position: fixed; top: 10%; left: 30%; height: 80%; width: 40%">
+            <img id="img2" src="../pics/alien1.jpg" alt="No img" style="position: relative; height: 100%; width: 100%;">
+        </div>
+        <div style="position: fixed; left: 45%; bottom: 0;">
+            <button onclick="evo()">Evolution Start</button>
+        </div>
+	</body>
+</html>
